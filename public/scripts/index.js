@@ -60,8 +60,6 @@ async function requestCall(socketId) {
 
 async function callUser(socketId) {
 
-    console.log(socketId)
-
     const offer = await peerConnection.createOffer();
     await peerConnection.setLocalDescription(new RTCSessionDescription(offer));
 
@@ -71,7 +69,7 @@ async function callUser(socketId) {
     });
 }
 
-const socket = io.connect("localhost:5000");
+const socket = io.connect();
 
 socket.on("update-user-list", ({ users }) => {
     updateUserList(users);
