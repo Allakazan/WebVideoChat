@@ -2,7 +2,7 @@ import express from "express";
 import socketIO from "socket.io";
 import { createServer } from "http";
 
-const DEFAULT_PORT = 5000;
+const DEFAULT_PORT = process.env.PORT || 5000;
 
 class WebRTCServer {
     constructor() {
